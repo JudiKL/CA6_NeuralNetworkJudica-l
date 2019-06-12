@@ -28,7 +28,7 @@ num_y = 2;          % number of desired classes
 % Load Training Data
 % convert 3D dataset into 2d matrix
 
-[X,y] = extract_data('01cr.fdt');
+[X,y] = extract_data_basic('01cr.fdt');
 [X] = data_redux(X);
 [rows, column] = size(X);
 y = y';

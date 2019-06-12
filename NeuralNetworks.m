@@ -27,7 +27,7 @@ num_labels = 2;          % number of labels
 % Load Training Data
 % convert 3D dataset into 2d matrix
 
-[X,y] = extract_data('01cr.fdt');
+[X,y] = extract_data_basic('01cr.fdt');
 [X] = data_redux(X);
 [rows, column] = size(X);
 y = y';
@@ -117,10 +117,10 @@ end
 correct = 0; %Initialize correct trials
 
 % Accuracy percentage
-for trial = 1:Num_trials 
-     if prediction(trial) == labels_test(trial)%If prediction matches label, mark correct response
+for trial = 1:length(X) 
+     if predictions(i) == y(i)%If prediction matches label, mark correct response
                 correct = correct + 1;
      end
 end
-correct = (correct/Num_trials)*100; %Convert to a percentage 
+correct = (correct/length(X))*100; %Convert to a percentage 
 
